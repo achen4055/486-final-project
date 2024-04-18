@@ -45,7 +45,7 @@ This guide provides detailed instructions on how to set up and use the various c
 - **Location**: Navigate to the `label extraction` folder within the project directory.
 - **Usage**:
   1. Identify the appropriate script for your data source (e.g., `goodreads.py`, `google.py`, `twitter.py`).
-  2. Prepare your data in the format required by the selected script.
+  2. Prepare your data in the format required by the selected script and substitute the file name in the code.
   3. Run the script to extract labels. For example, to run the Goodreads label extraction script:
       ```bash
       python goodreads.py
