@@ -129,7 +129,7 @@ def main():
     #         print(f"Year {year} not found in dictionary.")
 
 
-    with open('summary.output', 'w') as f:
+    with open('summary_output.txt', 'w') as f:
         for year, books in year_book_dict.items():
             # Print the year
             print(f"Year: {year}")

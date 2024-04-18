@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
 import csv
+import sys
 
 
 def close_popup_if_exists(driver):
@@ -97,7 +98,7 @@ def main():
     #     print("Usage: python main.py folder_path")
     #     sys.exit(1)
 
-    # folder_path = sys.argv[1]
+    input_file_path = sys.argv[1]
     # python main.py cranfieldDocs/
 
     # Rest of your script goes here
@@ -107,7 +108,8 @@ def main():
     year_book_dict = {}
     count = 0
     # Open the CSV file
-    with open('2020-2022.csv', newline='', encoding='utf-8') as csvfile:
+    # 2009-2019 amazon_books.csv
+    with open(input_file_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         
         # Iterate over each row in the CSV file
@@ -137,7 +139,7 @@ def main():
 
 
     # count = 0
-    with open('reviews.output', 'w') as f:
+    with open('reviews_output.txt', 'w') as f:
         for year, books in year_book_dict.items():
             # Print the year
             print(f"Year: {year}")
