@@ -19,6 +19,9 @@ The identified categories are then used as input for the RoBERTa model to predic
 ### Objective
 By implementing this system, Amazon booksellers can dynamically adjust their inventory to align with predicted bestsellers and consumer demand, optimizing stock levels and potentially increasing sales and profits through more accurate and data-driven decision-making.
 
+### Challenge and future plan
+We also plan to incorporate Goodreads reviews into our data processing framework. However, due to the substantial volume of review data, we encountered challenges with processing capacity, as standard GPUs were inadequate. This has prompted further considerations for optimizing data handling and processing to include these extensive datasets effectively.
+
 This approach promises to transform the way books are sold on Amazon by integrating advanced machine learning techniques to forecast market dynamics effectively.
 
 # Project Setup Guide
