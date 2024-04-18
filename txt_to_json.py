@@ -1,9 +1,7 @@
 from collections import defaultdict
 from nltk.tokenize import word_tokenize, sent_tokenize
-import string
-import nltk
 import re
-import math
+import sys
 import json
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -111,15 +109,18 @@ def extract_books_summaries(file_path, word_dict):
 
 def main():
 
+    # raw_data_from_crawler/2009-2019reviews(Good_Read).txt review
+    input_file_path = sys.argv[1]
+    type = sys.argv[2]
     word_dict = defaultdict(int)
-    # book_reviews = extract_books_reviews("2020-2022reviews.txt", word_dict)
-    book_summaries = extract_books_summaries("2020-2022summaries.txt", word_dict)
-
-    # dict: book1:reviews, book2:reviews
-
+    # 2020-2022summaries.txt
     with open('2020-2022summaries.json', 'w', encoding= 'utf-8') as jsonfile: 
-        json.dump(book_summaries, jsonfile, indent=4, ensure_ascii=False)
-        # json.dump(book_reviews, jsonfile, indent=4, ensure_ascii=False)
+        if type == "summary":
+            book_summaries = extract_books_summaries(input_file_path, word_dict)
+            json.dump(book_summaries, jsonfile, indent=4, ensure_ascii=False)
+        else:
+            book_reviews = extract_books_reviews(input_file_path, word_dict)
+            json.dump(book_reviews, jsonfile, indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":

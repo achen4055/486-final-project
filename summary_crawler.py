@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import WebDriverException
 import csv
+import sys
 
 
 def close_popup_if_exists(driver):
@@ -20,12 +21,6 @@ def close_popup_if_exists(driver):
         print("No close button found or it was not clickable within the timeout period.")
 
 def get_book_summary(book_title):
-    # Set up the Selenium WebDriver
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('--incognito')  # Use incognito mode to avoid cookies/pop-ups from past sessions
-    # options.add_argument("--no-sandbox")  # Bypass OS security model
-    # options.add_argument("--headless")  # Run in headless mode, useful if you don't need a GUI.
-    # options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
 
     max_attempts = 5
     attempt = 0
@@ -35,10 +30,6 @@ def get_book_summary(book_title):
         try:
             # Set up the Selenium WebDriver
             options = webdriver.ChromeOptions()
-            # options.add_argument('--incognito')  # Use incognito mode to avoid cookies/pop-ups from past sessions
-            # options.add_argument("--no-sandbox")  # Bypass OS security model
-            # options.add_argument("--headless")  # Run in headless mode, useful if you don't need a GUI.
-            # options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
             driver = webdriver.Chrome(options=options)
 
             # Open the search page on Goodreads
@@ -85,22 +76,12 @@ def get_book_summary(book_title):
 
 def main():
 
-    # Check if at least one argument is provided
-    # if len(sys.argv) < 2:
-    #     print("Usage: python main.py folder_path")
-    #     sys.exit(1)
+    input_file_path = sys.argv[1]
 
-    # folder_path = sys.argv[1]
-    # python main.py cranfieldDocs/
-
-    # Rest of your script goes here
-    # print(f"Folder Path: {folder_path}")
-
-    # (book name + summary) should also be a text
     year_book_dict = {}
     count = 0
     # Open the CSV file
-    with open('2020-2022.csv', newline='', encoding='utf-8') as csvfile:
+    with open(input_file_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         
         # Iterate over each row in the CSV file
@@ -117,17 +98,6 @@ def main():
                 year_book_dict[book_year] = [book_name]
             # print(year_book_dict)
 
-    # Iterate over the dictionary
-    # Open a file in write mode
-
-    # years_to_remove = ['2016', '2011', '2018', '2017', '2019', '2014']
-
-    # for year in years_to_remove:
-    #     if year in year_book_dict:
-    #         del year_book_dict[year]
-    #     else:
-    #         print(f"Year {year} not found in dictionary.")
-
 
     with open('summary_output.txt', 'w') as f:
         for year, books in year_book_dict.items():
@@ -141,7 +111,6 @@ def main():
                 print("book name: " + book, file=f)
                 print("book summary: " + summary, file=f)
                 print("-" * 40, file=f)  # Separator for readability
-                # print(f" - {book}")
                 print(count)
                 count += 1
 
@@ -149,22 +118,6 @@ def main():
             print()
             
 
-    # Use the function with the desired book title
-    # summary = get_book_summary('Harry Potter and the Chamber of Secrets: The Illustrated Edition (Harry Potter, Book 2)')
-    # summary = get_book_summary('The Great Gatsby')
-    # print(summary)
-
-
-
-    # for filename in os.listdir(folder_path):
-    #     file_path = os.path.join(folder_path, filename)
-
-    #     # Read the file with ISO-8859-1 encoding
-    #     with open(file_path, 'r', encoding='ISO-8859-1') as file:
-    #         content = file.read()
-    #         print(f"File: {filename}")
-    #         # print("Tokens:", tokens)
-    #         # print("-" * 30)
 
 if __name__ == "__main__":
     main()
