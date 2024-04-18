@@ -79,3 +79,8 @@ This guide provides detailed instructions on how to set up and use the various c
 - **Support**: Additional helper classes are available in the same folder to assist with the extraction process.
 
 By following these instructions, you can effectively set up and use the project's tools for your data analysis and processing needs. If you encounter any problems, refer back to this guide and check the troubleshooting section in our documentation.
+
+## Data Processing
+- **Purpose**: Follow the algorithm in paper to find most popular ten words for every two year.
+- **Usage**: If you are using Colab, you can directly run the `data_processing.ipynb` in Colab. If you run the code on your local device, you may need to `pip install torch, transformers`. In both case, please make sure you have cuda deceive, otherwise, change the pipeline with `device = torch.device('cpu')`.
+- **Output**: The output of this part is stored in `final_label.txt`
