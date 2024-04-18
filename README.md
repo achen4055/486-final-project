@@ -5,7 +5,7 @@
 This project tackles the complex challenges Amazon booksellers face in leveraging market trends, driven by a vast array of ratings and reviews across multiple platforms. The core objective is to develop a dynamic recommendation system designed to help sellers effectively stock books that are likely to be in demand, thereby maximizing profitability.
 
 ### Overview
-The solution harnesses data from various sources, including book summaries and reviews from Goodreads and Google Books, as well as trending words from social media. This data is aggregated and analyzed to identify emerging trends via specific keywords.
+The solution harnesses data from various sources, including book summaries from Goodreads and Google Books, as well as trending words from social media. This data is aggregated and analyzed to identify emerging trends via specific keywords.
 
 ### System Design
 The project involves creating a sophisticated classification system that categorizes books based on current trends. This is achieved by:
