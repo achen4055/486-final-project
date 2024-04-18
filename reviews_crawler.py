@@ -137,7 +137,7 @@ def main():
 
 
     # count = 0
-    with open('reviews2020.txt', 'w') as f:
+    with open('reviews.output', 'w') as f:
         for year, books in year_book_dict.items():
             # Print the year
             print(f"Year: {year}")
