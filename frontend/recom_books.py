@@ -10,7 +10,8 @@
 
 import requests
 import json
-api_key = "AIzaSyAvm1etYVsqW8teg52kUK1jC4ggTQGGnEQ"
+
+api_key = "GOOGLE_API_KEY"
 
 
 
