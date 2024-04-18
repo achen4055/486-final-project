@@ -1,6 +1,3 @@
-# Alexei Chen
-# alexeich
-
 import sys
 import requests
 import re
@@ -65,14 +62,6 @@ def rel_link(url, link):
     return urljoin(url, link)
 
 
-def contain_domain(input):
-    """Check the domain."""
-    valid_domains = {'eecs.umich', 'eecs.engin.umich', 'ece.engin.umich', 'cse.engin.umich'}
-    parse_url = urlparse(input)
-    domain = parse_url.netloc
-    smth = any(d in domain for d in valid_domains)
-    return smth
-
 def check_html(content_type):
     """Check if page is HTML."""
     if 'html' in content_type:
@@ -88,11 +77,7 @@ def crawl_page(output_dict, date, top_n):
     except Exception as e:
         print(f"Error w/ request for {date}, skipping")
         return
-    # if resp.history: # if it's a redirect
-    #     norm_url = norm_link(resp.url)
-    #     if norm_url != url: # and the redirect isn't because I'm missing the trailing /
-    #         if norm_url in visited: # and I've visited this page already
-    #             return
+
     try:
         soup = BeautifulSoup(resp.text, 'html.parser')
     except Exception as e:
@@ -128,13 +113,8 @@ def crawl_page(output_dict, date, top_n):
             summary_issue.add(top_result)
             continue
 
-        # date_dict[date].append(trending_topic)
-        # trend_dict[trending_topic] = summary
         count += 1
         output_dict[top_result].append({"summary": summary, "date": date, "rank": count})
-
-        # print(f"trending topic: {trending_topic}")
-        # TODO: possibly normalize before storing
 
 
 def crawl(output_dict, dates, top_n):
@@ -143,9 +123,6 @@ def crawl(output_dict, dates, top_n):
         crawl_page(output_dict, date, top_n)
 
 def main():
-    # df = mediawikiapi.page("VShojo")
-    # date_dict = collections.defaultdict(list) # key: date; value: 10 most popular hashtags on twitter on date
-    # trend_dict = {} # key: hashtag; value: summary of hashtag
     # Output dictionary:
     # key: word/trend
     # value: dictionary of {"summary": string, "date": date, "rank": rank}
@@ -155,26 +132,9 @@ def main():
     crawl(output_dict, dates, 10)
     print("Done")
 
-
     with open(f'twitter.json', 'w+', encoding='utf-8') as outfile:
         json.dump(output_dict, outfile, indent=4, ensure_ascii=False)
 
-    # # date|trend
-    # with open(f'date.output', 'w+', encoding='utf-8') as out_file:
-    #     for date, trend_list in date_dict.items():
-    #         for trend in trend_list:
-    #             try:
-    #                 out_file.write(f"{date}\t{trend}\n")
-    #             except Exception as e:
-    #                 print(f"Encoding error for:\n{date}\t{trend}")
-
-    # # summary.output
-    # with open(f'summary.output', 'w+', encoding='utf-8') as out_file:
-    #     for trend, summary in trend_dict.items():
-    #         try:
-    #             out_file.write(f"{trend}\t{summary}\n")
-    #         except Exception as e:
-    #             print(f"Encoding error for:\n{trend}\t{summary}")
 
 if __name__ == '__main__':
     main()
