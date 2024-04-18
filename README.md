@@ -20,7 +20,11 @@ This guide provides detailed instructions on how to set up and use the various c
     ```
 - **Instructions**:
   1. Prepare a CSV file formatted according to the specifications in our source folder.
-  2. To execute the crawlers, use the command line. For example, to run the Twitter crawler:
+  2. To execute the review or summary crawlers, use the command line with appropriate argument(input file path) like:
+    ```bash
+     python3 reviews_crawler.py source/2009-2019_amazon_books.csv
+    ```
+  3. To execute the twitter crawlers, directly use the command line:
       ```bash
       python3 crawler_twitter.py
       ```
@@ -30,9 +34,9 @@ This guide provides detailed instructions on how to set up and use the various c
 ### Converting Text to JSON
 - **Purpose**: Convert the TXT output from the crawlers into JSON format for later data processing.
 - **Procedure**:
-  1. Use the `txt_to_json.py` script to convert TXT files to JSON. Run the following command in your terminal:
+  1. Use the `txt_to_json.py` script to convert TXT files to JSON. Provide [input file path] and [type(summary or review)] in your command. For instance,
       ```bash
-      python txt_to_json.py
+      python3 txt_to_json.py data_from_crawler/2020-2022summaries_Good_Read.txt summary
       ```
 
 ## Label Extraction
