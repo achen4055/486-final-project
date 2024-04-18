@@ -1,1 +1,2 @@
-09_10: ['thinking', 'tale', 'host', 'sequel', 'attention', 'power', 'drama', 'position', 'areas', 'leader' ]
+09_10: ['thinking', 'tale', 'host', 'sequel', 'attention', 'power', 'drama', 'position', 'areas', 'leader']
+13_14: ['media', 'power', 'young', 'host', 'company', 'variety', 'attention', 'groups', 'success', 'leader']
