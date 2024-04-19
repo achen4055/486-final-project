@@ -91,4 +91,6 @@ By following these instructions, you can effectively set up and use the project'
       ```bash
       python3 recom_books.py
       ```
-  It will default to recommend the most relative top 10 books for each trending label. After that, you just run python3 -m http.server 8000. If you specify the port 8000, you will need to go to the link "http://localhost:8000/show.html" and see the front end page. 
+  It will default to recommend the most relative top 10 books for each trending label. After that, you just run python3 -m http.server 8000. If you specify the port 8000, you will need to go to the link "http://localhost:8000/show.html" and see the front-end page. The description about the book could be seen after clicking the description button.
+  <img width="705" alt="image" src="https://github.com/achen4055/486-final-project/assets/87424645/78d139cb-6e5f-424a-8bd9-a86dd468a692">
+
