@@ -86,7 +86,8 @@ By following these instructions, you can effectively set up and use the project'
 - **Output**: The output of data processing is stored in `final_label.txt`
 
 ## Recommendations && Data Display
-- **Purpose**: Given the top trend labels, you will need to save them in a "txt" file after running the Colab. Proceeding to the frontend folder, you put the txt file inside the folder. Then, run
+- **Purpose**: Get recommmendations and display them in an user-friendly way.
+- **Usage**: Given the top trend labels, you will need to save them in a "txt" file after running the Colab. Proceeding to the frontend folder, you put the txt file inside the folder. Then, run
       ```bash
       python3 recom_books.py
       ```
