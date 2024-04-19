@@ -1,5 +1,7 @@
 # What’s in People’s Mind?
 
+Link to github: [https://github.com/achen4055/486-final-project](https://github.com/achen4055/486-final-project)
+
 ## Project Description
 
 This project tackles the complex challenges Amazon booksellers face in leveraging market trends, driven by a vast array of ratings and reviews across multiple platforms. The core objective is to develop a dynamic recommendation system designed to help sellers effectively stock books that are likely to be in demand, thereby maximizing profitability.
