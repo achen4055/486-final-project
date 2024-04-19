@@ -84,3 +84,11 @@ By following these instructions, you can effectively set up and use the project'
 - **Purpose**: Follow the algorithm in paper to find most popular ten words for every two year.
 - **Usage**: If you are using Colab, you can directly run the `data_processing.ipynb` in Colab. If you run the code on your local device, you may need to `pip install torch, transformers`. In both case, please make sure you have cuda deceive, otherwise, change the pipeline with `device = torch.device('cpu')`.
 - **Output**: The output of this part is stored in `final_label.txt`
+- 
+
+## Recommendations && Data Display
+- **Purpose**: Given the top trend labels, you will need to save them in a "txt" file after running the Colab. Proceeding to the frontend folder, you put the txt file inside the folder. Then, run
+      ```bash
+      python3 recom_books.py
+      ```
+  It will default to recommend the most relative top 10 books for each trending label. After that, you just run python3 -m http.server 8000. If you specify the port 8000, you will need to go to the link "http://localhost:8000/show.html" and see the front end page. 
