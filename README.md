@@ -1,6 +1,6 @@
 # What’s in People’s Mind?
 
-Link to github: [https://github.com/achen4055/486-final-project](https://github.com/achen4055/486-final-project)
+Link to github (easier to read): [https://github.com/achen4055/486-final-project](https://github.com/achen4055/486-final-project)
 
 ## Project Description
 
