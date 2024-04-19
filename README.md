@@ -88,7 +88,7 @@ By following these instructions, you can effectively set up and use the project'
 ## Recommendations && Data Display
 - **Purpose**: Get recommmendations and display them in an user-friendly way.
 - **Usage**: Given the top trend labels, you will need to save them in a "txt" file after running the Colab. Proceeding to the frontend folder, you put the txt file inside the folder. Then, run
-      ```bash
+      ```
       python3 recom_books.py
       ```
   It will default to recommend the most relative top 10 books for each trending label. After that, you just run python3 -m http.server 8000. If you specify the port 8000, you will need to go to the link "http://localhost:8000/show.html" and see the front-end page. The description about the book could be seen after clicking the description button.
