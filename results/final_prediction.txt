@@ -1,0 +1,6 @@
+Prediction: 
+2011-12:media, category, marketing, categories, news
+13-14:media, category, marketing, categories, trends
+15-16:media, content, category, categories, marketing
+17-18:media, content, marketing, data, media
+20-21:media, marketing, style, business, category
