@@ -1,5 +1,5 @@
 09_10: ['thinking', 'tale', 'host', 'sequel', 'attention', 'power', 'position', 'drama', 'areas', 'leader']
-12_13: ['young', 'power', 'attention', 'thinking', 'tale', 'drama', 'company', 'position', 'leader', 'danger']
+11_12: ['young', 'power', 'attention', 'thinking', 'tale', 'drama', 'company', 'position', 'leader', 'danger']
 13_14: ['media', 'power', 'young', 'host', 'company', 'variety', 'capital', 'attention', 'success', 'position']
 15_16: ['media', 'classic', 'power', 'attention', 'groups', 'success', 'variety', 'style', 'guide', 'areas']
 17_19: ['media', 'power', 'areas', 'classic', 'thinking', 'attention', 'leader', 'groups', 'company', 'variety']
